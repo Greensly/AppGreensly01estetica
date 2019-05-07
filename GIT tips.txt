@@ -1,0 +1,19 @@
+Eliminar carpeta o archivos de un repositorio
+
+1) Clonamos repositorio en algun lugar del PC
+
+$ git clone https://github.com/Greensly/PCBGreensly.git
+
+2) eliminamos archivo o carpeta 
+
+$ git rm vacio.txt   //archivo
+
+$ git rm -r vacio	//carpeta
+
+3)hacemos commit para confirmar documento eliminado
+
+$ git commit -m "Elimino archivo vacio"
+
+4) Subimos los cambios al repositorio
+
+$ git push
