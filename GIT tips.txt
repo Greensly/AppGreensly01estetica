@@ -17,3 +17,27 @@ $ git commit -m "Elimino archivo vacio"
 4) Subimos los cambios al repositorio
 
 $ git push
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+actualizar programa o archivo o carpeta
+
+Agregar todas modificaciones 
+1) git add .
+
+Ingresar correo
+2) git config --global user.email "erick.orrego.diaz@gmail.com"
+
+Ingresar nombre
+3) git config --global user.name "Erick Orrego Díaz"
+
+Realizar commit con mensaje ejemplo
+4) git commit -m "modificacion de archivo"
+
+Subir a github
+5) git push
+Se abrirá una ventana que pide usuario y contraseña
+User: Greensly
+Pass: droom6030364
+
+
