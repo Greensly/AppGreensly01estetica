@@ -2276,6 +2276,21 @@
 <rectangle x1="1.746" y1="-0.254" x2="2.254" y2="0.254" layer="51"/>
 <rectangle x1="3.746" y1="-0.254" x2="4.254" y2="0.254" layer="51"/>
 </package>
+<package name="1X01" urn="urn:adsk.eagle:footprint:22382/1" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X04" urn="urn:adsk.eagle:package:22407/2" type="model" library_version="3">
@@ -2390,6 +2405,12 @@
 <description>CON-M-1X5-200</description>
 <packageinstances>
 <packageinstance name="1_05X2MM"/>
+</packageinstances>
+</package3d>
+<package3d name="1X01" urn="urn:adsk.eagle:package:22485/2" type="model" library_version="3">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X01"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2633,6 +2654,15 @@
 <pin name="3" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="4" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="5" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+<symbol name="PINHD1" urn="urn:adsk.eagle:symbol:22381/1" library_version="3">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3232,6 +3262,25 @@
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:22466/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD-1X1" urn="urn:adsk.eagle:component:22540/2" prefix="JP" uservalue="yes" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22485/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -12005,6 +12054,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="CONECTOR-LASER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X5" device="" package3d_urn="urn:adsk.eagle:package:22469/2"/>
 <part name="CONECTOR-PRINTER3D" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X20" device="" package3d_urn="urn:adsk.eagle:package:22441/2"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/5" package3d_urn="urn:adsk.eagle:package:23488/1"/>
+<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
+<part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device="" package3d_urn="urn:adsk.eagle:package:22485/2"/>
+<part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
+<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -12151,6 +12204,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="NAME" x="-42.1386" y="-41.91" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-37.338" y="-41.91" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="JP1" gate="G$1" x="-30.48" y="91.44"/>
+<instance part="JP2" gate="G$1" x="-17.78" y="93.98"/>
+<instance part="JP3" gate="A" x="-50.8" y="-27.94"/>
+<instance part="JP4" gate="A" x="-63.5" y="81.28" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -12418,36 +12475,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="-63.5" y1="-43.18" x2="-76.2" y2="-43.18" width="0.1524" layer="91"/>
 <wire x1="-76.2" y1="-43.18" x2="-76.2" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="-76.2" y="-40.64"/>
-</segment>
-</net>
-<net name="N$20" class="0">
-<segment>
-<pinref part="12VDC-CNC" gate="G$1" pin="2"/>
-<wire x1="-91.44" y1="-30.48" x2="-81.28" y2="-35.56" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="-35.56" x2="-81.28" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="93.98" x2="-30.48" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="LED-CNC" gate="G$1" pin="2"/>
-<wire x1="-30.48" y1="93.98" x2="-27.94" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="-92.45741875" y1="-41.349015625" x2="-91.44" y2="-41.349015625" width="0.1524" layer="91"/>
-<wire x1="-91.44" y1="-41.349015625" x2="-91.44" y2="-43.18" width="0.1524" layer="91"/>
-<wire x1="-91.44" y1="-43.18" x2="-81.28" y2="-43.18" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="-43.18" x2="-81.28" y2="-35.56" width="0.1524" layer="91"/>
-<junction x="-81.28" y="-35.56"/>
-<wire x1="-279.4" y1="-38.1" x2="-279.4" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="93.98" x2="-279.4" y2="93.98" width="0.1524" layer="91"/>
-<junction x="-81.28" y="93.98"/>
-<pinref part="12VDC-LASER" gate="G$1" pin="2"/>
-<wire x1="-281.94" y1="-50.8" x2="-289.56" y2="-50.8" width="0.1524" layer="91"/>
-<wire x1="-289.56" y1="-50.8" x2="-289.56" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-289.56" y1="-38.1" x2="-279.4" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="LED-LASER" gate="G$1" pin="2"/>
-<wire x1="-281.94" y1="-73.66" x2="-289.56" y2="-73.66" width="0.1524" layer="91"/>
-<wire x1="-289.56" y1="-73.66" x2="-289.56" y2="-50.8" width="0.1524" layer="91"/>
-<junction x="-289.56" y="-50.8"/>
-<pinref part="USB-CNC/LASER" gate="A" pin="4"/>
-<wire x1="-43.18" y1="91.44" x2="-30.48" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-30.48" y1="91.44" x2="-30.48" y2="93.98" width="0.1524" layer="91"/>
-<junction x="-30.48" y="93.98"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -13370,13 +13397,36 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="124.46" y1="93.98" x2="124.46" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="12VDC" gate="G$1" pin="2"/>
 <wire x1="40.64" y1="93.98" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
-<junction x="40.64" y="93.98"/>
 <wire x1="101.6" y1="93.98" x2="124.46" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="-35.56" y1="93.98" x2="40.64" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="USB-PRINTER3D" gate="A" pin="1"/>
 <wire x1="116.84" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="91.44" x2="101.6" y2="93.98" width="0.1524" layer="91"/>
 <junction x="101.6" y="93.98"/>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="40.64" y1="93.98" x2="-20.32" y2="93.98" width="0.1524" layer="91"/>
+<junction x="40.64" y="93.98"/>
+<pinref part="12VDC-CNC" gate="G$1" pin="2"/>
+<wire x1="-91.44" y1="-30.48" x2="-81.28" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="-35.56" x2="-81.28" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="LED-CNC" gate="G$1" pin="2"/>
+<wire x1="-92.45741875" y1="-41.349015625" x2="-91.44" y2="-41.349015625" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="-41.349015625" x2="-91.44" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="-43.18" x2="-81.28" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="-43.18" x2="-81.28" y2="-35.56" width="0.1524" layer="91"/>
+<junction x="-81.28" y="-35.56"/>
+<wire x1="-279.4" y1="-38.1" x2="-279.4" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="93.98" x2="-279.4" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="12VDC-LASER" gate="G$1" pin="2"/>
+<wire x1="-281.94" y1="-50.8" x2="-289.56" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="-289.56" y1="-50.8" x2="-289.56" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-289.56" y1="-38.1" x2="-279.4" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="LED-LASER" gate="G$1" pin="2"/>
+<wire x1="-281.94" y1="-73.66" x2="-289.56" y2="-73.66" width="0.1524" layer="91"/>
+<wire x1="-289.56" y1="-73.66" x2="-289.56" y2="-50.8" width="0.1524" layer="91"/>
+<junction x="-289.56" y="-50.8"/>
+<wire x1="-20.32" y1="93.98" x2="-81.28" y2="93.98" width="0.1524" layer="91"/>
+<junction x="-20.32" y="93.98"/>
+<junction x="-81.28" y="93.98"/>
 </segment>
 </net>
 <net name="N$109" class="0">
@@ -13480,59 +13530,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="PRINTER3D-1" gate="A" pin="2"/>
 <pinref part="USB-PRINTER3D" gate="A" pin="2"/>
 <wire x1="83.82" y1="88.9" x2="116.84" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$122" class="0">
-<segment>
-<pinref part="CNC/LASER-1" gate="A" pin="7"/>
-<wire x1="-2.54" y1="81.28" x2="-10.16" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="CNC/LASER-1" gate="A" pin="9"/>
-<wire x1="-2.54" y1="78.74" x2="-10.16" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="CNC/LASER-1" gate="A" pin="11"/>
-<wire x1="-2.54" y1="76.2" x2="-10.16" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-10.16" y1="76.2" x2="-10.16" y2="78.74" width="0.1524" layer="91"/>
-<junction x="-10.16" y="78.74"/>
-<wire x1="-10.16" y1="78.74" x2="-10.16" y2="81.28" width="0.1524" layer="91"/>
-<junction x="-10.16" y="81.28"/>
-<wire x1="-10.16" y1="81.28" x2="-78.74" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="CNC" gate="A" pin="9"/>
-<wire x1="-40.64" y1="30.48" x2="-45.72" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="-45.72" y1="30.48" x2="-45.72" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="CNC" gate="A" pin="13"/>
-<wire x1="-45.72" y1="27.94" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="-45.72" y1="25.4" x2="-40.64" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="CNC" gate="A" pin="11"/>
-<wire x1="-40.64" y1="27.94" x2="-45.72" y2="27.94" width="0.1524" layer="91"/>
-<junction x="-45.72" y="27.94"/>
-<wire x1="-45.72" y1="27.94" x2="-78.74" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="LASER" gate="A" pin="10"/>
-<wire x1="-78.74" y1="27.94" x2="-195.58" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-231.14" y1="-66.04" x2="-223.52" y2="-66.04" width="0.1524" layer="91"/>
-<wire x1="-223.52" y1="-66.04" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
-<pinref part="LASER" gate="A" pin="14"/>
-<wire x1="-223.52" y1="-68.58" x2="-223.52" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="-223.52" y1="-71.12" x2="-231.14" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="-195.58" y1="27.94" x2="-195.58" y2="-68.58" width="0.1524" layer="91"/>
-<wire x1="-195.58" y1="-68.58" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
-<junction x="-223.52" y="-68.58"/>
-<pinref part="LASER" gate="A" pin="12"/>
-<wire x1="-231.14" y1="-68.58" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
-<wire x1="-78.74" y1="81.28" x2="-78.74" y2="27.94" width="0.1524" layer="91"/>
-<junction x="-78.74" y="27.94"/>
-<pinref part="CNC/LASER-2" gate="A" pin="4"/>
-<wire x1="-50.8" y1="-40.64" x2="-55.88" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="CNC/LASER-2" gate="A" pin="6"/>
-<wire x1="-55.88" y1="-43.18" x2="-50.8" y2="-43.18" width="0.1524" layer="91"/>
-<wire x1="-50.8" y1="-43.18" x2="-50.8" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="-50.8" y="-40.64"/>
-<wire x1="-50.8" y1="-38.1" x2="-50.8" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="CNC/LASER-2" gate="A" pin="2"/>
-<wire x1="-55.88" y1="-38.1" x2="-50.8" y2="-38.1" width="0.1524" layer="91"/>
-<junction x="-50.8" y="-38.1"/>
-<wire x1="-50.8" y1="-27.94" x2="-50.8" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="-50.8" y1="-30.48" x2="-50.8" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="-78.74" y1="27.94" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-50.8" y1="27.94" x2="-50.8" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$84" class="0">
@@ -13753,6 +13750,86 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="PRINTER3D-2" gate="A" pin="48"/>
 <pinref part="CONECTOR-PRINTER3D" gate="A" pin="20"/>
 <wire x1="106.68" y1="-99.06" x2="144.78" y2="-99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$148" class="0">
+<segment>
+<pinref part="USB-CNC/LASER" gate="A" pin="4"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="91.44" x2="-33.02" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$149" class="0">
+<segment>
+<pinref part="CNC/LASER-2" gate="A" pin="4"/>
+<wire x1="-50.8" y1="-40.64" x2="-55.88" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="CNC/LASER-2" gate="A" pin="6"/>
+<wire x1="-55.88" y1="-43.18" x2="-50.8" y2="-43.18" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-43.18" x2="-50.8" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-50.8" y="-40.64"/>
+<wire x1="-50.8" y1="-38.1" x2="-50.8" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="CNC/LASER-2" gate="A" pin="2"/>
+<wire x1="-55.88" y1="-38.1" x2="-50.8" y2="-38.1" width="0.1524" layer="91"/>
+<junction x="-50.8" y="-38.1"/>
+<wire x1="-50.8" y1="-25.4" x2="-50.8" y2="-38.1" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="A" pin="2"/>
+<pinref part="JP3" gate="A" pin="3"/>
+<wire x1="-53.34" y1="-30.48" x2="-53.34" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-27.94"/>
+<pinref part="JP3" gate="A" pin="1"/>
+<wire x1="-53.34" y1="-25.4" x2="-53.34" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="-53.34" y="-25.4"/>
+<wire x1="-53.34" y1="-25.4" x2="-50.8" y2="-25.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$122" class="0">
+<segment>
+<pinref part="JP4" gate="A" pin="3"/>
+<pinref part="JP4" gate="A" pin="2"/>
+<wire x1="-66.04" y1="83.82" x2="-63.5" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="A" pin="1"/>
+<wire x1="-63.5" y1="83.82" x2="-60.96" y2="83.82" width="0.1524" layer="91"/>
+<junction x="-63.5" y="83.82"/>
+<pinref part="CNC/LASER-1" gate="A" pin="7"/>
+<wire x1="-2.54" y1="81.28" x2="-10.16" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="CNC/LASER-1" gate="A" pin="9"/>
+<wire x1="-2.54" y1="78.74" x2="-10.16" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="CNC/LASER-1" gate="A" pin="11"/>
+<wire x1="-2.54" y1="76.2" x2="-10.16" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="76.2" x2="-10.16" y2="78.74" width="0.1524" layer="91"/>
+<junction x="-10.16" y="78.74"/>
+<wire x1="-10.16" y1="78.74" x2="-10.16" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-10.16" y="81.28"/>
+<wire x1="-10.16" y1="81.28" x2="-55.88" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="CNC" gate="A" pin="9"/>
+<wire x1="-55.88" y1="81.28" x2="-78.74" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="30.48" x2="-45.72" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="30.48" x2="-45.72" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="CNC" gate="A" pin="13"/>
+<wire x1="-45.72" y1="27.94" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="25.4" x2="-40.64" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="CNC" gate="A" pin="11"/>
+<wire x1="-40.64" y1="27.94" x2="-45.72" y2="27.94" width="0.1524" layer="91"/>
+<junction x="-45.72" y="27.94"/>
+<wire x1="-45.72" y1="27.94" x2="-78.74" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="LASER" gate="A" pin="10"/>
+<wire x1="-78.74" y1="27.94" x2="-195.58" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-231.14" y1="-66.04" x2="-223.52" y2="-66.04" width="0.1524" layer="91"/>
+<wire x1="-223.52" y1="-66.04" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="LASER" gate="A" pin="14"/>
+<wire x1="-223.52" y1="-68.58" x2="-223.52" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-223.52" y1="-71.12" x2="-231.14" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-195.58" y1="27.94" x2="-195.58" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-195.58" y1="-68.58" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
+<junction x="-223.52" y="-68.58"/>
+<pinref part="LASER" gate="A" pin="12"/>
+<wire x1="-231.14" y1="-68.58" x2="-223.52" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="81.28" x2="-78.74" y2="27.94" width="0.1524" layer="91"/>
+<junction x="-78.74" y="27.94"/>
+<wire x1="-78.74" y1="27.94" x2="-50.8" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="83.82" x2="-55.88" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="83.82" x2="-55.88" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-55.88" y="81.28"/>
 </segment>
 </net>
 </nets>

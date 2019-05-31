@@ -12009,6 +12009,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <sheets>
 <sheet>
 <plain>
+<text x="45.72" y="99.06" size="1.778" layer="91">12V</text>
 </plain>
 <instances>
 <instance part="JP1" gate="A" x="38.1" y="83.82" smashed="yes" rot="R180">
@@ -12046,7 +12047,10 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="JP8" gate="A" x="78.74" y="63.5"/>
 <instance part="JP7" gate="A" x="0" y="63.5"/>
 <instance part="JP29" gate="A" x="119.38" y="86.36"/>
-<instance part="JP30" gate="A" x="-45.72" y="88.9" rot="R180"/>
+<instance part="JP30" gate="A" x="-45.72" y="88.9" smashed="yes" rot="R180">
+<attribute name="NAME" x="-39.37" y="80.645" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-39.37" y="96.52" size="1.778" layer="96" rot="R180"/>
+</instance>
 <instance part="JP31" gate="A" x="-279.4" y="-93.98"/>
 <instance part="JP32" gate="A" x="147.32" y="-73.66"/>
 </instances>
